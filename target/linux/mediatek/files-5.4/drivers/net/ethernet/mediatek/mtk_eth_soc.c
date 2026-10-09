@@ -3861,7 +3861,7 @@ static const struct mtk_soc_data mt7986_data = {
 	.hw_features = MTK_HW_FEATURES,
 	.required_clks = MT7986_CLKS_BITMAP,
 	.required_pctl = false,
-	.has_sram = true,
+	.has_sram = false,
 };
 
 static const struct mtk_soc_data mt7981_data = {
