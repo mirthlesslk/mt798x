@@ -24,7 +24,7 @@
 	
 
 	memory {
-		reg = <0 0x40000000 0 0x10000000>;
+		reg = <0 0x40000000 0 0x20000000>;
 	};
 
   	
@@ -193,16 +193,19 @@
 &spi0 {
 	pinctrl-names = "default";
 	pinctrl-0 = <&spi_flash_pins>;
-	status = "okay";
 	cs-gpios = <0>, <0>;
+	status = "okay";
+
 	spi_nand: spi_nand@0 {
+		compatible = "spi-nand";
 		#address-cells = <1>;
 		#size-cells = <1>;
-		compatible = "spi-nand";
 		reg = <1>;
+
 		spi-max-frequency = <20000000>;
-		spi-tx-buswidth = <4>;
-		spi-rx-buswidth = <4>;
+		spi-tx-bus-width = <4>;
+		spi-rx-bus-width = <4>;
+
 		partitions {
  			compatible = "fixed-partitions";
  			#address-cells = <1>;
